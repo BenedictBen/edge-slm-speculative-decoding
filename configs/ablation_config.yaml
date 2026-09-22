@@ -1,0 +1,23 @@
+# Ablation Grid Configuration for SpecEdge
+# Sweeps over Quantization Bit-Width x Lookahead Horizon (gamma) x Entropy Threshold (tau)
+
+sweeps:
+  quantization_regimes:
+    - name: "T_fp16_D_fp16"
+      target_quant: "fp16"
+      draft_quant: "fp16"
+    - name: "T_int8_D_fp16"
+      target_quant: "int8"
+      draft_quant: "fp16"
+    - name: "T_int4_D_fp16"
+      target_quant: "int4"
+      draft_quant: "fp16"
+    - name: "T_int4_D_int4"
+      target_quant: "int4"
+      draft_quant: "int4"
+
+  lookahead_horizons: [1, 2, 3, 5, 7]
+
+  entropy_thresholds: [0.8, 1.1, 1.45, 1.8, 2.2] # Sweep tau for EG-Spec
+
+  statistical_trials: 5 # Number of repetitions per prompt across random seeds for confidence intervals

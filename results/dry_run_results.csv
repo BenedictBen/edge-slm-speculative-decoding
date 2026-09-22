@@ -1,0 +1,10 @@
+prompt_id,category,ar_tokens_per_sec,ar_ms_per_token,ar_tokens_gen,static_tokens_per_sec,static_ms_per_token,static_speedup,static_acc_rate,eg_tokens_per_sec,eg_ms_per_token,eg_speedup,eg_acc_rate,peak_vram_mb
+math_01,mathematical_reasoning,84.43,11.84,25,140.62,7.11,1.665,0.7,100.05,9.99,1.185,0.9231,0.0
+math_02,mathematical_reasoning,116.74,8.57,25,178.08,5.62,1.525,0.84,115.14,8.69,0.986,1.0,0.0
+math_03,mathematical_reasoning,118.27,8.46,25,182.44,5.48,1.544,0.8,114.28,8.75,0.967,0.9231,0.0
+code_01,code_generation,136.24,7.34,25,186.02,5.38,1.364,1.0,114.23,8.75,0.839,1.0,0.0
+code_02,code_generation,127.9,7.82,25,293.47,3.41,2.293,1.0,197.05,5.07,1.542,1.0,0.0
+code_03,code_generation,204.89,4.88,25,322.79,3.1,1.574,1.0,230.04,4.35,1.122,1.0,0.0
+sum_01,summarization,210.46,4.75,25,351.87,2.84,1.673,0.8,212.59,4.7,1.011,0.9231,0.0
+sum_02,summarization,196.38,5.09,25,317.33,3.15,1.616,0.92,200.3,4.99,1.02,1.0,0.0
+sum_03,summarization,231.57,4.32,25,335.09,2.98,1.45,1.0,229.05,4.37,0.989,1.0,0.0

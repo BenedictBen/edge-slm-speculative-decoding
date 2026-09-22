@@ -1,0 +1,40 @@
+# Default Configuration for SpecEdge Benchmark Experiments
+
+experiment:
+  name: "specedge_quant_speculative_benchmark"
+  seed: 42
+  device: "cuda" # 'cuda' or 'cpu' (falls back automatically if cuda is unavailable)
+  output_dir: "./results"
+
+models:
+  # Primary lightweight edge pair
+  target_model_name: "HuggingFaceTB/SmolLM-1.7B-Instruct"
+  draft_model_name: "HuggingFaceTB/SmolLM-135M-Instruct"
+  
+  # Secondary alternative pair (uncomment to run)
+  # target_model_name: "Qwen/Qwen2.5-1.5B-Instruct"
+  # draft_model_name: "Qwen/Qwen2.5-0.5B-Instruct"
+
+quantization:
+  # Options: 'fp16', 'int8', 'int4'
+  target_quant: "int4"
+  draft_quant: "fp16" # Keeping draft in FP16 or INT8 retains distribution fidelity
+
+speculative:
+  gamma: 5                # Lookahead horizon (number of draft tokens proposed per step)
+  temperature: 0.0        # 0.0 = greedy decoding; >0.0 = stochastic sampling
+  top_p: 1.0              # Nucleus sampling threshold
+  max_new_tokens: 128     # Maximum generated tokens per prompt
+
+adaptive_eg_spec:
+  enabled: true           # Whether to use Entropy-Gated Adaptive Speculation
+  entropy_threshold: 1.45 # Shannon entropy threshold tau (nats) to trigger early draft exit
+  min_gamma: 1            # Minimum draft tokens to generate before checking entropy
+  confidence_margin: 0.25 # Minimum top1 - top2 probability margin required to continue drafting
+
+benchmarks:
+  categories:
+    - "mathematical_reasoning"
+    - "code_generation"
+    - "summarization"
+  num_samples_per_category: 15
