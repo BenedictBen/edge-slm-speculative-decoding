@@ -2,8 +2,11 @@
 
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![PyTorch 2.2+](https://img.shields.io/badge/PyTorch-2.2+-ee4c2c.svg)](https://pytorch.org/)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://edge-slm-speculative-decoding-8pesdhfvlnu8rxzbybynaw.streamlit.app/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Paper](https://img.shields.io/badge/Paper-PDF-red)](paper/spec_edge_paper.tex)
+
+🌐 **Live Interactive Showcase**: [https://edge-slm-speculative-decoding-8pesdhfvlnu8rxzbybynaw.streamlit.app/](https://edge-slm-speculative-decoding-8pesdhfvlnu8rxzbybynaw.streamlit.app/)
 
 **SpecEdge** is a research framework investigating the empirical dynamics of **Speculative Decoding** under aggressive **Low-Bit Post-Training Quantization (INT4-NF4 / INT8 / FP16)** for resource-constrained edge Small Language Models (SLMs, 135M–3B parameters).
 
@@ -98,7 +101,8 @@ python run_experiments.py \
 ```
 
 ### 4. Interactive Streamlit Dashboard
-Launch the visual speculative execution trace app:
+* **Live Web App**: [https://edge-slm-speculative-decoding-8pesdhfvlnu8rxzbybynaw.streamlit.app/](https://edge-slm-speculative-decoding-8pesdhfvlnu8rxzbybynaw.streamlit.app/)
+* **Or run locally**:
 ```bash
 streamlit run app.py
 ```
