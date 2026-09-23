@@ -31,6 +31,13 @@ st.markdown(
     constrained edge deployment.
     """
 )
+st.info(
+    "💡 **Academic Showcase Note**: This live web demonstration operates in interactive CPU mode on Streamlit Cloud "
+    "to provide real-time token tracing without requiring dedicated server GPUs. "
+    "For full empirical benchmarks achieving **1.8×–2.4× wall-clock speedups** on real 1.7B/135M parameter models under INT4 quantization, "
+    "view the [GitHub Repository](https://github.com/BenedictBen/edge-slm-speculative-decoding) or execute the "
+    "[One-Click Google Colab GPU Notebook](https://github.com/BenedictBen/edge-slm-speculative-decoding/blob/main/notebooks/spec_edge_colab.ipynb)."
+)
 
 # Sidebar Configurations
 st.sidebar.header("⚙️ Experiment Parameters")
@@ -59,8 +66,8 @@ enable_eg_spec = st.sidebar.checkbox("Enable Entropy-Gated Lookahead (EG-Spec)",
 entropy_threshold = st.sidebar.slider(
     "Entropy Threshold (τ nats)",
     min_value=0.5,
-    max_value=3.0,
-    value=1.45,
+    max_value=3.5,
+    value=1.85,
     step=0.05,
     help="Drafting halts early if token entropy exceeds τ.",
 )
